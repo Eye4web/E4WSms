@@ -1,0 +1,32 @@
+<?php
+return array(
+    'e4wsms' => array(
+        /*
+         * Sms receivable
+         */
+        'receivable' => '',
+
+        /*
+         * Sms adapter
+         */
+        'adapter' => '',
+
+        'smsgatewaydk' => array(
+            'username' => '',
+            'password' => ''
+        ),
+        'inmobile' => array(
+            'apiKey' => '',
+        ),
+        'twilio' => array(
+            'sid' => '',
+            'token' => '',
+        ),
+        'stadel' => array(
+            'api' => 'http://sms.stadel.dk/send.php',
+            'sender' => '',
+            'user' => '',
+            'pass' => '',
+        )
+    ),
+);

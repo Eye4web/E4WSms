@@ -1,0 +1,43 @@
+{
+    "name": "eye4web/e4w-sms",
+    "description": "Zf2 sms service with changeable gateway support",
+    "license": "MIT",
+    "keywords": [
+        "sms",
+        "zendframework",
+        "module",
+        "eye4web"
+    ],
+    "homepage": "https://github.com/Eye4web/E4WSms",
+    "authors": [
+        {
+            "name": "Daniel Strøm",
+            "email": "daniel@eye4web.dk",
+            "homepage": "http://eye4web.dk"
+        },
+        {
+            "name": "Nikolaj Petersen",
+            "email": "np@eye4web.dk"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.x-dev"
+        }
+    },
+    "require": {
+        "php": "~5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0.0",
+        "squizlabs/php_codesniffer": "~2.0.0@DEV"
+    },
+    "suggest": {
+        "twilio/sdk": "To use the Twillio adapter"
+    },
+    "autoload": {
+        "psr-0": {
+            "E4W\\Sms\\": "src/"
+        }
+    }
+}
