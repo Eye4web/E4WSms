@@ -27,10 +27,6 @@ class SmsServiceFactory implements FactoryInterface
         $smsAdapter = $serviceLocator->get($config['e4wsms']['adapter']);
         $service->setAdapter($smsAdapter);
 
-        // Entity Manager
-        $objectManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
-        $service->setObjectManager($objectManager);
-
         return $service;
     }
 }
