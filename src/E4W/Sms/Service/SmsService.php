@@ -2,9 +2,13 @@
 namespace E4W\Sms\Service;
 
 use E4W\Sms\Adapter\Sms\SmsAdapterInterface;
+use Zend\EventManager\EventManagerAwareInterface;
+use Zend\EventManager\EventManagerAwareTrait;
 
-class SmsService
+class SmsService implements EventManagerAwareInterface
 {
+    use EventManagerAwareTrait;
+
     /** @var SmsAdapterInterface */
     protected $adapter;
 
@@ -18,6 +22,12 @@ class SmsService
      */
     public function send($to, $text, $from = null)
     {
+        $this->getEventManager()->trigger('send', $this, [
+            'to' => $to,
+            'text' => $text,
+            'from' => $from,
+        ]);
+
         return $this->adapter->send($to, $text, $from);
     }
 
@@ -26,6 +36,9 @@ class SmsService
         if (!method_exists($this->adapter, 'receive')) {
             throw new \Exception('The adapter does not support two-ways sms');
         }
+        $this->getEventManager()->trigger('receive', $this, [
+            'data' => $data,
+        ]);
 
         return $this->adapter->receive($data);
     }
