@@ -27,6 +27,11 @@ return array(
             'sender' => '',
             'user' => '',
             'pass' => '',
+        ),
+        'sureSms' => array(
+            'sender' => '',
+            'user' => '',
+            'pass' => '',
         )
     ),
 );
