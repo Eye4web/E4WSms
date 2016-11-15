@@ -1,9 +1,6 @@
 <?php
 namespace E4W\Sms\Adapter\Sms;
 
-// Require Twilio SDK
-require 'vendor/twilio/sdk/Services/Twilio.php';
-
 class TwilioAdapter implements SmsAdapterInterface
 {
     protected $config;
@@ -17,10 +14,12 @@ class TwilioAdapter implements SmsAdapterInterface
      * @param $from
      * @return object
      */
-    public function send($to, $text, $from = '9991231234')
+    public function send($to, $text, $from = null)
     {
         $client = $this->getClient();
 
+        $from = ($from) ? $from : $this->config['from'];
+        
         $message = $client->account->messages->sendMessage(
             $from,
             $to,
