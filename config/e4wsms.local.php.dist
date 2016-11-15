@@ -32,6 +32,11 @@ return array(
             'sender' => '',
             'user' => '',
             'pass' => '',
-        )
+        ),
+        'bulkSms' => array(
+            'sender' => '',
+            'username' => '',
+            'password' => '',
+        ),
     ),
 );

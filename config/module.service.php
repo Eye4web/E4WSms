@@ -12,5 +12,6 @@ return array(
         'E4W\Sms\Adapter\Sms\Log' => 'E4W\Sms\Factory\Adapter\LogAdapterFactory',
         'E4W\Sms\Adapter\Sms\Stadel' => 'E4W\Sms\Factory\Adapter\StadelAdapterFactory',
         'E4W\Sms\Adapter\Sms\SureSms' => 'E4W\Sms\Factory\Adapter\SureSmsAdapterFactory',
+        'E4W\Sms\Adapter\Sms\BulkSmsAdapter' => 'E4W\Sms\Factory\Adapter\BulkSmsAdapterFactory',
     ),
 );
